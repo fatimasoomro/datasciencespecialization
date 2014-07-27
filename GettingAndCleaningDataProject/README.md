@@ -16,8 +16,9 @@ The first four are accomplished by the function mergedatasets in run_analysis.R 
 The dataframe it returns can be fed into the other function makeaverages like 
 
      makeaverages(df, dodebug)
-which will write the desired dataframe in a csvfile called "mysolutiondataframe.csv"
+which will write the desired dataframe in a csv file called "mysolutiondataframe.csv"
 
 Both functions take "dodebug" as input, which, if set to true, will print some messages which can be helpful for debugging.
 Further detailed comments are found in the .R file itself. 
 
+There is no codebook since I did not change the names of the varaibles apart from removing special characters.

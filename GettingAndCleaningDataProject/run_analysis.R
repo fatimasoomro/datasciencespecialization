@@ -124,7 +124,7 @@ mergedatasets <- function(dirname, dodebug){
     
     if(dodebug) cat(" column name to bind to df ", colname, "\n", sep="")
     orignames[origlen + i] <- colname
-    
+    ## cat(startingStr," = " , colname, "\n", sep="") ## uncomment to make codebook 
     # append the same column from the test and train data sets to tmpVec
     tmpVec<- measTest[,  featIndices[i]]
     tmpVec<- append(tmpVec,  measTrain[, featIndices[i]], after=length(tmpVec))
