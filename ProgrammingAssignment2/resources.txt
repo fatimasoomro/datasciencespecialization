@@ -1,0 +1,18 @@
+Helpful material about dataframes
+http://ww2.coastal.edu/kingw/statistics/R-tutorials/dataframes.html
+http://stackoverflow.com/questions/9713294/split-data-frame-based-on-levels-of-a-factor-into-new-data-frames
+
+http://stackoverflow.com/questions/14984989/how-to-avoid-warning-when-introducing-nas-by-coercion
+http://stackoverflow.com/questions/1448600/change-default-prompt-and-output-line-prefix-in-r
+
+http://git-scm.com/book/en/Getting-Started-Git-Basics
+
+http://rogerdudler.github.io/git-guide/
+
+https://generalassemb.ly/online
+
+http://www.codecademy.com/learn
+
+http://www.datasciencecentral.com/profiles/blogs/must-read-before-attending-any-data-science-interview
+
+
