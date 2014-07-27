@@ -21,4 +21,4 @@ which will write the desired dataframe in a csv file called "mysolutiondataframe
 Both functions take "dodebug" as input, which, if set to true, will print some messages which can be helpful for debugging.
 Further detailed comments are found in the .R file itself. 
 
-A simple codebook is provided which maps the variable names in the original dataset to the ones in the new one. However, no significant change has been made to the variable names apart from the removal of special characters.
+A simple codebook is provided which maps the variable names in the original dataset to the ones in the new one. However, no significant change has been made to the variable names apart from the removal of special characters. The run_analysis will produce this file every time as well.

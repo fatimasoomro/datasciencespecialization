@@ -1,6 +1,7 @@
 
 mergedatasets <- function(dirname, dodebug){
 
+  writeCodeBook<- TRUE 
   if (dirname=="") dirname <- "UCI_HAR_Dataset"
   nobs<- 561
   allOK <- FALSE
@@ -96,7 +97,7 @@ mergedatasets <- function(dirname, dodebug){
   origlen <- length(orignames)
 
   ## Write the "translation" of variables to a file called "codebook"
-  cat("Variable in original dataset = Variable in new dataset" ,file="codebook",sep="\n")
+  if(writeCodeBook) cat("Variable in original dataset = Variable in new dataset" ,file="codebook",sep="\n")
   
   for(i in 1:length(featIndices)){
   # find a good column name
@@ -129,9 +130,10 @@ mergedatasets <- function(dirname, dodebug){
     orignames[origlen + i] <- colname
 
     ## Write to code book 
-    tmpstrtowrite <- paste(startingStr," = " , colname, sep="")
-    cat(tmpstrtowrite, file="codebook", append=TRUE, sep="\n")
-    
+    if(writeCodeBook){
+      tmpstrtowrite <- paste(startingStr," = " , colname, sep="")
+      cat(tmpstrtowrite, file="codebook", append=TRUE, sep="\n")
+    }
     # append the same column from the test and train data sets to tmpVec
     tmpVec<- measTest[,  featIndices[i]]
     tmpVec<- append(tmpVec,  measTrain[, featIndices[i]], after=length(tmpVec))
