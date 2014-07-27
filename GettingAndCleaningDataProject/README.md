@@ -13,6 +13,8 @@ The first four are accomplished by the function mergedatasets in run_analysis.R 
 
      df<- mergedatasets(dirname, dodebug)
 
+where the dirname is the name of the directory where the data are. If left to be empty ("") it defaults to  "UCI_HAR_Dataset"
+
 The dataframe it returns can be fed into the other function makeaverages like 
 
      makeaverages(df, dodebug)
