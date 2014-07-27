@@ -94,7 +94,10 @@ mergedatasets <- function(dirname, dodebug){
   df<- data.frame("Activity"=activities, "Subject"=subjectTrain)
   orignames<- names(df)
   origlen <- length(orignames)
- 
+
+  ## Write the "translation" of variables to a file called "codebook"
+  cat("Variable in original dataset = Variable in new dataset" ,file="codebook",sep="\n")
+  
   for(i in 1:length(featIndices)){
   # find a good column name
     colname <- ""
@@ -124,13 +127,18 @@ mergedatasets <- function(dirname, dodebug){
     
     if(dodebug) cat(" column name to bind to df ", colname, "\n", sep="")
     orignames[origlen + i] <- colname
-    ## cat(startingStr," = " , colname, "\n", sep="") ## uncomment to make codebook 
+
+    ## Write to code book 
+    tmpstrtowrite <- paste(startingStr," = " , colname, sep="")
+    cat(tmpstrtowrite, file="codebook", append=TRUE, sep="\n")
+    
     # append the same column from the test and train data sets to tmpVec
     tmpVec<- measTest[,  featIndices[i]]
     tmpVec<- append(tmpVec,  measTrain[, featIndices[i]], after=length(tmpVec))
     # bind it to the data frame  
     df<-cbind(df, "name"=tmpVec)
   }
+
   ## ---------              ----------             -------- ##
 
   ## ---------              ----------             -------- ##
